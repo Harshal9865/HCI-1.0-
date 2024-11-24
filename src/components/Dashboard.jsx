@@ -64,7 +64,7 @@ const Dashboard = () => {
                 className="w-20 h-20 rounded-full border-4 border-teal-400 mx-auto"
               />
               <div className="text-center mt-4">
-                <p className="font-bold text-lg text-teal-700">Kapil Sharma</p>
+                <p className="font-bold text-lg text-teal-700">Abhishek Upmanyu</p>
                 <p className="text-gray-600">Software Engineer</p>
                 <p className="text-gray-600">Email: john.doe@example.com</p>
                 <p className="text-gray-600">Phone: +91 9839893766</p>
