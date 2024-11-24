@@ -173,7 +173,7 @@ const ContactPage = () => {
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Dynamic Team Member */}
-            {['Kullu', 'Samay'].map((name, idx) => (
+            {['Akash Gupta', 'Samay'].map((name, idx) => (
               <div key={idx} className="flex flex-col items-center">
                 <img
                   src={idx === 0 ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhq3M_iJI2sNFs8Q00VbwADYA_hTfbyzXINg&s' : 'https://www.redwolf.in/image/cache/catalog/marketplace/samay-raina/samay-raina-artist-image-272x275.jpg?m=1706184771'}  // Separate images for each
