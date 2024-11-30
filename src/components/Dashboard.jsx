@@ -19,18 +19,18 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
       <aside className={`w-64 bg-gradient-to-r from-teal-500 to-emerald-400 text-white p-6 shadow-md min-h-screen transition-transform duration-300 ${isSidebarOpen ? 'transform-none' : '-translate-x-full'}`}>
-        <h2 className="text-3xl font-bold mb-6">Dashboard</h2>
+        <h2 className="text-3xl font-bold mb-6 text-teal-100">Dashboard</h2>
         <nav className="space-y-4">
-          <Link to="/profile" className="block text-lg py-3 px-4 bg-white text-teal-600 rounded-lg shadow-md hover:bg-teal-100 hover:scale-105 transition duration-200">
+          <Link to="/profile" className="block text-lg py-3 px-4 bg-white text-teal-600 rounded-lg shadow-md hover:bg-teal-100 hover:scale-105 transform transition-all duration-300">
             Profile
           </Link>
-          <Link to="/attendance" className="block text-lg py-3 px-4 bg-white text-teal-600 rounded-lg shadow-md hover:bg-teal-100 hover:scale-105 transition duration-200">
+          <Link to="/attendance" className="block text-lg py-3 px-4 bg-white text-teal-600 rounded-lg shadow-md hover:bg-teal-100 hover:scale-105 transform transition-all duration-300">
             Attendance
           </Link>
-          <Link to="/payroll" className="block text-lg py-3 px-4 bg-white text-teal-600 rounded-lg shadow-md hover:bg-teal-100 hover:scale-105 transition duration-200">
+          <Link to="/payroll" className="block text-lg py-3 px-4 bg-white text-teal-600 rounded-lg shadow-md hover:bg-teal-100 hover:scale-105 transform transition-all duration-300">
             Payroll
           </Link>
         </nav>
@@ -39,15 +39,15 @@ const Dashboard = () => {
       {/* Mobile Sidebar Toggle Button */}
       <button
         onClick={() => setSidebarOpen(!isSidebarOpen)}
-        className="lg:hidden absolute top-4 left-4 p-2 bg-teal-500 text-white rounded-lg shadow-md z-10"
+        className="lg:hidden absolute top-4 left-4 p-2 bg-teal-500 text-white rounded-lg shadow-md z-10 hover:bg-teal-600 focus:outline-none"
       >
         {isSidebarOpen ? 'Close' : 'Open'}
       </button>
 
       {/* Main Content */}
-      <main className="flex-1 bg-gradient-to-r from-gray-100 to-white p-8">
+      <main className="flex-1 bg-gradient-to-r from-gray-100 to-white p-8 overflow-auto">
         <h1 className="text-4xl font-bold mb-4 text-green-800">Welcome, Employee!</h1>
-        <p className="text-lg text-gray-700 mb-8">
+        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
           Here you can view your profile, check attendance, and manage your payroll.
         </p>
 
@@ -61,7 +61,7 @@ const Dashboard = () => {
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz9B_4vX6dIm6o4XZ3x8ksR3wjjIaGm69VRg&s"
                 alt="Employee"
-                className="w-20 h-20 rounded-full border-4 border-teal-400 mx-auto"
+                className="w-20 h-20 rounded-full border-4 border-teal-400 mx-auto transition-transform transform hover:scale-110"
               />
               <div className="text-center mt-4">
                 <p className="font-bold text-lg text-teal-700">Abhishek Upmanyu</p>
@@ -91,7 +91,7 @@ const Dashboard = () => {
           </div>
 
           {/* Attendance Card */}
-          <div className="p-4 bg-white rounded-lg shadow-lg">
+          <div className="p-4 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
             <h3 className="text-xl font-semibold mb-2">Attendance</h3>
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
@@ -104,7 +104,7 @@ const Dashboard = () => {
                 </thead>
                 <tbody>
                   {previousMonthDays.map((day) => (
-                    <tr className="hover:bg-gray-100 transition duration-200" key={day.date}>
+                    <tr className="hover:bg-gray-100 transition-all duration-200" key={day.date}>
                       <td className="py-2 px-4 border-b">{`2024-10-${day.date.toString().padStart(2, '0')}`}</td>
                       <td className="py-2 px-4 border-b text-green-600">{getStatusIcon(day.status)}</td>
                       <td className="py-2 px-4 border-b">N/A</td>
@@ -133,13 +133,13 @@ const Dashboard = () => {
           </div>
 
           {/* Payroll Card */}
-          <div className="p-6 bg-white rounded-lg shadow-lg">
+          <div className="p-6 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
             <h3 className="text-xl font-semibold mb-2">Payroll</h3>
             <h4 className="text-lg font-semibold mb-4">Leave Approval</h4>
             <form>
               <div className="mb-4">
                 <label htmlFor="leaveType" className="block text-sm font-semibold text-gray-700">Leave Type</label>
-                <select id="leaveType" className="w-full mt-2 p-2 border rounded-lg bg-gray-100">
+                <select id="leaveType" className="w-full mt-2 p-2 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-300">
                   <option value="sick">Sick Leave</option>
                   <option value="vacation">Vacation</option>
                   <option value="emergency">Emergency</option>
@@ -150,7 +150,7 @@ const Dashboard = () => {
                 <input
                   type="date"
                   id="startDate"
-                  className="w-full mt-2 p-2 border rounded-lg bg-gray-100"
+                  className="w-full mt-2 p-2 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-300"
                 />
               </div>
               <div className="mb-4">
@@ -158,7 +158,7 @@ const Dashboard = () => {
                 <input
                   type="date"
                   id="endDate"
-                  className="w-full mt-2 p-2 border rounded-lg bg-gray-100"
+                  className="w-full mt-2 p-2 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-300"
                 />
               </div>
               <div className="mb-4">
@@ -166,11 +166,11 @@ const Dashboard = () => {
                 <textarea
                   id="reason"
                   rows="4"
-                  className="w-full mt-2 p-2 border rounded-lg bg-gray-100"
+                  className="w-full mt-2 p-2 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-300"
                   placeholder="Enter your reason for leave"
                 />
               </div>
-              <button type="submit" className="w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Submit Leave Request</button>
+              <button type="submit" className="w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300">Submit Leave Request</button>
             </form>
           </div>
 
